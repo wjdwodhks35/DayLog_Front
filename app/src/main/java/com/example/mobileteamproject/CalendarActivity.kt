@@ -6,6 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 class CalendarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.calendar)
+        setContentView(R.layout.calendar2)
     }
 }
