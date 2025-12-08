@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MobileTeamProject"
+rootProject.name = "Day_Log"
 include(":app")
  

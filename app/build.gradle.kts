@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mobileteamproject"
+    namespace = "com.example.day_log"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.mobileteamproject"
-        minSdk = 24
+        applicationId = "com.example.day_log"
+        minSdk = 28
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -36,9 +36,6 @@ android {
 }
 
 dependencies {
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
