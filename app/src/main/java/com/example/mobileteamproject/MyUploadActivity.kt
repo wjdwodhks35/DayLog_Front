@@ -10,7 +10,7 @@ class MyUploadActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.myupload)
 
-
+        // 버튼 이벤트 처리
         findViewById<Button>(R.id.backBtn).setOnClickListener {
             finish()
         }

@@ -27,5 +27,10 @@ class MyPageActivity : AppCompatActivity() {
         findViewById<Button>(R.id.todo_list).setOnClickListener {
             startActivity(Intent(this, TodoActivity::class.java))
         }
+
+        val backBtn = findViewById<Button>(R.id.backBtn)
+        backBtn.setOnClickListener {
+            finish()
+        }
     }
 }

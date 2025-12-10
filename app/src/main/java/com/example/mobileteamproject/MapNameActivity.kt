@@ -10,7 +10,7 @@ class MapNameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.map_name)
 
-
+        // 버튼 이벤트 처리
         findViewById<Button>(R.id.backBtn).setOnClickListener {
             finish()
         }
@@ -23,6 +23,5 @@ class MapNameActivity : AppCompatActivity() {
         findViewById<Button>(R.id.myPageBtn).setOnClickListener {
             startActivity(Intent(this, MyPageActivity::class.java))
         }
-
     }
 }
