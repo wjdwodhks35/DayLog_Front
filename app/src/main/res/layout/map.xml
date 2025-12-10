@@ -11,7 +11,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/Bback_page"
+            android:id="@+id/backBtn"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -33,13 +33,13 @@
             android:textColor="@color/black" />
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map_fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@drawable/mapimg">
+        android:name="com.naver.maps.map.MapFragment" />
 
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,8 +53,8 @@
             android:layout_gravity="center"
             android:layout_marginStart="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/circle_icon"
-            android:id="@+id/btn1"/>
+            android:background="@drawable/selected_home"
+            android:id="@+id/homeBtn"/>
 
         <Button
             android:layout_width="60dp"
@@ -62,8 +62,8 @@
             android:layout_gravity="center"
             android:layout_marginStart="48dp"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/circle_icon"
-            android:id="@+id/btn2"/>
+            android:background="@drawable/search"
+            android:id="@+id/searchBtn"/>
 
         <Button
             android:layout_width="60dp"
@@ -71,8 +71,8 @@
             android:layout_gravity="center"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/circle_icon"
-            android:id="@+id/btn3"/>
+            android:background="@drawable/nonselected_mypage"
+            android:id="@+id/myPageBtn"/>
     </LinearLayout>
 
 </LinearLayout>

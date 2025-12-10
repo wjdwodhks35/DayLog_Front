@@ -16,14 +16,12 @@ class UploadActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.upload)  // upload.xml 사용
 
-        val backBtn = findViewById<Button>(R.id.backBtn)
         val nextBtn = findViewById<Button>(R.id.nextBtn)
         val postTitle = findViewById<EditText>(R.id.postTitle)
         val contentInput = findViewById<EditText>(R.id.contentInput)
         val timePicker = findViewById<TimePicker>(R.id.timePicker)
 
-        // 뒤로가기
-        backBtn.setOnClickListener {
+        findViewById<Button>(R.id.backBtn).setOnClickListener {
             finish()
         }
 
