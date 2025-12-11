@@ -72,4 +72,5 @@ interface ApiService {
     suspend fun getPostsByUser(
         @Path("userId") userId: Long
     ): List<PostResponseDto>
+
 }

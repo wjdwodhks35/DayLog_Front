@@ -26,7 +26,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         // ⚠ 레이아웃 이름 확인: activity_map, map 중에 실제 있는 걸로 바꿔줘
         setContentView(R.layout.map)
 
-        findViewById<Button>(R.id.backBtn).setOnClickListener {
+       findViewById<Button>(R.id.backBtn).setOnClickListener {
             finish()
         }
         findViewById<Button>(R.id.homeBtn).setOnClickListener {
@@ -54,7 +54,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             }
 
         mapFragment.getMapAsync(this)
-    }
 
     override fun onMapReady(naverMap: NaverMap) {
         naverMapObj = naverMap

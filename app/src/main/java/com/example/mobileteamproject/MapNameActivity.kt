@@ -10,8 +10,7 @@ class MapNameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.map_name)
 
-
-        findViewById<Button>(R.id.backBtn).setOnClickListener {
+       findViewById<Button>(R.id.backBtn).setOnClickListener {
             finish()
         }
         findViewById<Button>(R.id.homeBtn).setOnClickListener {
@@ -23,6 +22,5 @@ class MapNameActivity : AppCompatActivity() {
         findViewById<Button>(R.id.myPageBtn).setOnClickListener {
             startActivity(Intent(this, MyPageActivity::class.java))
         }
-
-    }
+   }
 }

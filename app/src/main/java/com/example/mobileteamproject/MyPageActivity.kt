@@ -26,6 +26,6 @@ class MyPageActivity : AppCompatActivity() {
         }
         findViewById<Button>(R.id.todo_list).setOnClickListener {
             startActivity(Intent(this, TodoActivity::class.java))
-        }
+      }
     }
 }
