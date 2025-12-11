@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity() {
 
                 // Todo 생성 요청
                 val newTodo = TodoCreateDto(
-                    content = "안드로이드에서 보낸 할일"
+                    content = "안드로이드에서 보낸 할일",
+                    done = null
                 )
 
                 val created = RetrofitInstance.api.createTodo(userId, newTodo)

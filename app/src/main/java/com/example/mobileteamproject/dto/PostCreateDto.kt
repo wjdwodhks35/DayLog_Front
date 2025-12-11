@@ -1,7 +1,7 @@
 package com.example.mobileteamproject.dto
 
 data class PostCreateDto(
-    val title: String,
-    val content: String,
-    val time: String
+    val userId: Long,      // 글 작성한 사람
+    val title: String,     // 글 제목
+    val content: String    // 글 내용
 )

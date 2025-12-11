@@ -7,6 +7,9 @@ import okhttp3.logging.HttpLoggingInterceptor
 
 object RetrofitInstance {
     private const val BASE_URL = "https://daylog-production-e92e.up.railway.app/"
+    // 로컬 테스트용 주소
+    // private const val BASE_URL = "http://10.0.2.2:8081/"
+
 
 
     // 에뮬레이터 → 로컬 스프링부트
