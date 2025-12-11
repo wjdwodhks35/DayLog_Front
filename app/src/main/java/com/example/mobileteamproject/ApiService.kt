@@ -9,14 +9,15 @@ interface ApiService {
     @POST("/api/auth/signup")
     suspend fun signup(
         @Body req: UserSignupDto
-    ): UserResponseDto   // ← String 대신 JSON 객체
+    ): UserResponseDto
 
     @POST("/api/auth/login")
     suspend fun login(
         @Body req: UserLoginDto
-    ): UserResponseDto   // ← 마찬가지
+    ): UserResponseDto
 
-    // TODO — 지금 이 부분은 서버랑 잘 맞아 있음
+
+    // TODO
     @POST("/todo/{userId}")
     suspend fun createTodo(
         @Path("userId") userId: Long,
@@ -60,13 +61,11 @@ interface ApiService {
 
 
     // POST UPLOAD
-// 게시글 업로드
     @POST("/api/post")
     suspend fun createPost(
         @Body req: PostCreateDto
     ): PostResponseDto
 
-    // (나중에 쓰게 될 목록 조회들)
     @GET("/api/post")
     suspend fun getAllPosts(): List<PostResponseDto>
 
@@ -74,5 +73,4 @@ interface ApiService {
     suspend fun getPostsByUser(
         @Path("userId") userId: Long
     ): List<PostResponseDto>
-
 }

@@ -1,4 +1,4 @@
-package com.example.mobileteamproject   // ← 프로젝트 패키지에 맞게
+package com.example.mobileteamproject
 
 import android.Manifest
 import android.content.Intent
@@ -23,7 +23,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // ⚠ 레이아웃 이름 확인: activity_map, map 중에 실제 있는 걸로 바꿔줘
+        // ⚠ 레이아웃 이름 확인: activity_map, map 중 실제 존재하는 파일로 설정
         setContentView(R.layout.map)
 
         findViewById<Button>(R.id.backBtn).setOnClickListener {
@@ -65,7 +65,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         naverMap.locationSource = locationSource
         naverMap.uiSettings.isLocationButtonEnabled = true
 
-        // 권한이 있으면 바로 따라가기, 없으면 한 번만 요청
+        // 권한이 있으면 바로 따라가기, 없으면 요청
         if (hasPermission()) {
             naverMap.locationTrackingMode = LocationTrackingMode.Follow
         } else {
@@ -105,15 +105,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             if (grantResults.isNotEmpty() &&
                 grantResults[0] == PackageManager.PERMISSION_GRANTED
             ) {
-                // 권한 허용됨 → 위치 따라가기 켜기
                 naverMapObj?.locationTrackingMode = LocationTrackingMode.Follow
             } else {
-                // 권한 거부됨 → 위치 기능 사용 안 함 (토스트 띄우고 끝내도 됨)
                 Toast.makeText(this, "위치 권한이 필요합니다.", Toast.LENGTH_SHORT).show()
             }
         }
     }
-
-
 }
-
