@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFFFFF"
-    android:padding="16dp"
-    android:id="@+id/calendarLayout">
+    android:padding="16dp">
 
     <RelativeLayout
         android:id="@+id/topBar"

@@ -11,6 +11,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/backBtn"
             android:layout_gravity="center"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -20,8 +21,7 @@
             android:backgroundTint="@color/white"
             android:gravity="center"
             android:padding="0dp"
-            android:includeFontPadding="false"
-            android:id="@+id/Bback_page"/>
+            android:includeFontPadding="false"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -93,117 +93,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#ADC1A6"
-                android:padding="10dp">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="내 게시물"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/white"
-                    android:id="@+id/my_upload2"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#ADC1A6"
-                android:padding="10dp">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="내 게시물"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/white"
-                    android:id="@+id/list1"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#ADC1A6"
-                android:padding="10dp">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="목록2"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/white"
-                    android:id="@+id/list2"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#ADC1A6"
-                android:padding="10dp">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="목록3"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/white"
-                    android:id="@+id/list3"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#ADC1A6"
-                android:padding="10dp">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="목록4"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/white"
-                    android:id="@+id/list4"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#ADC1A6"
-                android:padding="10dp">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="목록5"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/white"
-                    android:id="@+id/list5"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#ADC1A6"
-                android:padding="10dp">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="목록6"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/white"
-                    android:id="@+id/list6"/>
-
-            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
@@ -218,28 +107,28 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:background="@drawable/circle_icon"
+            android:background="@drawable/nonselected_home"
             android:layout_marginStart="60dp"
             android:layout_marginEnd="10dp"
-            android:id="@+id/btn1"/>
+            android:id="@+id/homeBtn"/>
 
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:background="@drawable/circle_icon"
+            android:background="@drawable/upload_post"
             android:layout_marginStart="48dp"
             android:layout_marginEnd="10dp"
-            android:id="@+id/btn2"/>
+            android:id="@+id/postBtn"/>
 
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:background="@drawable/circle_icon"
+            android:background="@drawable/selected_mypage"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="10dp"
-            android:id="@+id/btn3"/>
+            android:id="@+id/myPageBtn"/>
     </LinearLayout>
 
 </LinearLayout>
