@@ -13,9 +13,9 @@ class SearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        val etKeyword = findViewById<EditText>(R.id.etKeyword)
+        val etKeyword = findViewById<EditText>(R.id.etQuery)
         val btnSearch = findViewById<ImageView>(R.id.btnSearch)
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        val recyclerView = findViewById<RecyclerView>(R.id.rvPlaces)
 
         val adapter = SearchAdapter()
         recyclerView.layoutManager = LinearLayoutManager(this)

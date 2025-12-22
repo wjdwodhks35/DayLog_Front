@@ -11,7 +11,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/Bback_page"
+            android:id="@+id/backBtn"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -33,46 +33,45 @@
             android:textColor="@color/black" />
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map_fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@drawable/mapimg">
+        android:name="com.naver.maps.map.MapFragment" />
 
-    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="#D9F2D0"
-        android:orientation="horizontal">
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="#D9F2D0"
+    android:orientation="horizontal">
 
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/circle_icon"
-            android:id="@+id/btn1"/>
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@drawable/icon_home_filled"
+        android:id="@+id/homeBtn"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="24dp"/>
 
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="48dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/circle_icon"
-            android:id="@+id/btn2"/>
-
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/circle_icon"
-            android:id="@+id/btn3"/>
-    </LinearLayout>
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_search_24"
+        android:id="@+id/searchBtn"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="24dp"/>
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@drawable/icon_people"
+        android:id="@+id/myPageBtn"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="24dp"/>
+</LinearLayout>
 
 </LinearLayout>

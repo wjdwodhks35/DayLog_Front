@@ -11,11 +11,21 @@ class MyPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mypage)
 
-        val myUploadBtn = findViewById<Button>(R.id.my_upload)
 
-        myUploadBtn.setOnClickListener {
-            val intent = Intent(this, UploadActivity::class.java)
-            startActivity(intent)
+        findViewById<Button>(R.id.backBtn).setOnClickListener {
+            finish()
+        }
+        findViewById<Button>(R.id.homeBtn).setOnClickListener {
+            startActivity(Intent(this, MapActivity::class.java))
+        }
+        findViewById<Button>(R.id.postBtn).setOnClickListener {
+            startActivity(Intent(this, UploadActivity::class.java))
+        }
+        findViewById<Button>(R.id.myPageBtn).setOnClickListener {
+            startActivity(Intent(this, MyPageActivity::class.java))
+        }
+        findViewById<Button>(R.id.todo_list).setOnClickListener {
+            startActivity(Intent(this, TodoActivity::class.java))
         }
     }
 }

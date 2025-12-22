@@ -2,5 +2,5 @@ package com.example.mobileteamproject.dto
 
 data class TodoUpdateDto(
     val content: String,
-    val isCompleted: Boolean
+    val done: Boolean?
 )
