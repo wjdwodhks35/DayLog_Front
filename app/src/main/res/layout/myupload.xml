@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- 상단 바 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
@@ -11,29 +12,30 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_gravity="center"
+            android:id="@+id/Bback_page"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_gravity="center"
             android:text="&lt;"
             android:textColor="@color/black"
             android:textSize="32sp"
             android:backgroundTint="@color/white"
             android:gravity="center"
             android:padding="0dp"
-            android:includeFontPadding="false"
-            android:id="@+id/Bback_page"/>
+            android:includeFontPadding="false" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="마이 페이지"
+            android:text="내 업로드"
             android:background="@color/white"
             android:layout_gravity="center"
-            android:layout_marginStart="16dp"/>
+            android:layout_marginStart="16dp" />
 
     </LinearLayout>
 
+    <!-- 스크롤 영역 -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -46,70 +48,88 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <!-- 게시물 1 시작 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#ADC1A6"
                 android:padding="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
 
-                <LinearLayout
+                <!-- 이미지 + 좌우 버튼을 FrameLayout으로 -->
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:background="@drawable/schoolimg">
-                    <Button
-                        android:layout_gravity="center"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:text="&lt;"
-                        android:textColor="@color/black"
-                        android:textSize="32sp"
-                        android:backgroundTint="@color/white"
-                        android:gravity="center"
-                        android:padding="0dp"
-                        android:includeFontPadding="false"
-                        android:id="@+id/leftbtn2"
-                        android:layout_marginEnd="100dp"/>
-                    <Button
-                        android:layout_gravity="center"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:text="&gt;"
-                        android:textColor="@color/black"
-                        android:textSize="32sp"
-                        android:backgroundTint="@color/white"
-                        android:gravity="center"
-                        android:padding="0dp"
-                        android:includeFontPadding="false"
-                        android:id="@+id/rightbtn2"
-                        android:layout_marginStart="100dp"/>
-                </LinearLayout>
+                    android:layout_height="200dp"
+                    android:layout_margin="5dp">
+
+                    <ImageView
+                        android:id="@+id/postImage1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/schoolimg"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/leftbtn2"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="100dp"
+                            android:text="&lt;"
+                            android:textColor="@color/black"
+                            android:textSize="32sp"
+                            android:backgroundTint="@color/white"
+                            android:gravity="center"
+                            android:padding="0dp"
+                            android:includeFontPadding="false" />
+
+                        <Button
+                            android:id="@+id/rightbtn2"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="100dp"
+                            android:text="&gt;"
+                            android:textColor="@color/black"
+                            android:textSize="32sp"
+                            android:backgroundTint="@color/white"
+                            android:gravity="center"
+                            android:padding="0dp"
+                            android:includeFontPadding="false" />
+                    </LinearLayout>
+
+                </FrameLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="닉네임(id)"
                         android:textColor="@color/black"
-                        android:background="@color/white"/>
+                        android:background="@color/white" />
+
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="자세히 보기"
                         android:id="@+id/lookatbtn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="자세히 보기"
                         android:layout_gravity="center"
-                        android:background="@android:color/transparent"/>
-
-
+                        android:background="@android:color/transparent" />
                 </LinearLayout>
-
             </LinearLayout>
+            <!-- 게시물 1 끝 -->
+
+            <!-- 게시물 2 시작 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -117,96 +137,113 @@
                 android:padding="10dp"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:background="@drawable/schoolimg">
-                    <Button
-                        android:layout_gravity="center"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:text="&lt;"
-                        android:textColor="@color/black"
-                        android:textSize="32sp"
-                        android:backgroundTint="@color/white"
-                        android:gravity="center"
-                        android:padding="0dp"
-                        android:includeFontPadding="false"
-                        android:id="@+id/leftbtn"
-                        android:layout_marginEnd="100dp"/>
-                    <Button
-                        android:layout_gravity="center"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:text="&gt;"
-                        android:textColor="@color/black"
-                        android:textSize="32sp"
-                        android:backgroundTint="@color/white"
-                        android:gravity="center"
-                        android:padding="0dp"
-                        android:includeFontPadding="false"
-                        android:id="@+id/rightbtn"
-                        android:layout_marginStart="100dp"/>
-                </LinearLayout>
+                    android:layout_height="200dp"
+                    android:layout_margin="5dp">
+
+                    <ImageView
+                        android:id="@+id/postImage2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/schoolimg"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/leftbtn"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="100dp"
+                            android:text="&lt;"
+                            android:textColor="@color/black"
+                            android:textSize="32sp"
+                            android:backgroundTint="@color/white"
+                            android:gravity="center"
+                            android:padding="0dp"
+                            android:includeFontPadding="false" />
+
+                        <Button
+                            android:id="@+id/rightbtn"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="100dp"
+                            android:text="&gt;"
+                            android:textColor="@color/black"
+                            android:textSize="32sp"
+                            android:backgroundTint="@color/white"
+                            android:gravity="center"
+                            android:padding="0dp"
+                            android:includeFontPadding="false" />
+                    </LinearLayout>
+
+                </FrameLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="닉네임(id)"
                         android:textColor="@color/black"
-                        android:background="@color/white"/>
+                        android:background="@color/white" />
+
                     <Button
+                        android:id="@+id/lookatbtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="자세히 보기"
-                        android:id="@+id/lookatbtn"
                         android:layout_gravity="center"
-                        android:background="@android:color/transparent"/>
-
-
+                        android:background="@android:color/transparent" />
                 </LinearLayout>
 
             </LinearLayout>
+            <!-- 게시물 2 끝 -->
 
         </LinearLayout>
     </ScrollView>
 
+    <!-- 하단 네비게이션 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:background="#D9F2D0"
         android:orientation="horizontal">
+
         <Button
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:background="@drawable/circle_icon"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="10dp"
-            android:id="@+id/btn1"/>
+            android:background="@drawable/icon_home"
+            android:id="@+id/homeBtn"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="24dp"/>
+
         <Button
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:background="@drawable/circle_icon"
-            android:layout_marginStart="48dp"
-            android:layout_marginEnd="10dp"
-            android:id="@+id/btn2"/>
+            android:background="@drawable/icon_plus"
+            android:id="@+id/postBtn"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="24dp"/>
         <Button
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:background="@drawable/circle_icon"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="10dp"
-            android:id="@+id/btn3"/>
+            android:background="@drawable/icon_people_filled"
+            android:id="@+id/myPageBtn"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="24dp"/>
     </LinearLayout>
 
 </LinearLayout>
