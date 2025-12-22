@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D9F2D0">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingHorizontal="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/Bback_page"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="←"
+            android:textSize="30sp"
+            android:textColor="#333333"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:padding="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="게시글"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/thisbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="최근순"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#2E7D32"
+                    android:background="?attr/selectableItemBackground"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="12dp"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="16dp"
+                    android:background="#2E7D32"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="8dp"/>
+
+                <Button
+                    android:id="@+id/lookbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="조회순"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#558B57"
+                    android:background="?attr/selectableItemBackground"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="12dp"/>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:background="#EEEEEE">
+
+                        <ImageView
+                            android:id="@+id/sliderImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_launcher_background"
+                            app:tint="#D1E7DD"/>
+
+                        <Button
+                            android:id="@+id/leftbtn"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="&lt;"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333"
+                            android:background="#20FFFFFF"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"/>
+
+                        <Button
+                            android:id="@+id/rightbtn"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="&gt;"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333"
+                            android:background="#20FFFFFF"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="20dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="8dp">
+
+                            <TextView
+                                android:text="제목"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="#333333"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="6dp"/>
+
+                            <TextView
+                                android:text="내용이 들어가는 부분입니다. 내용이 길어지면 자동으로 줄바꿈이 됩니다."
+                                android:textSize="14sp"
+                                android:textColor="#666666"
+                                android:lineSpacingExtra="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <ImageButton
+                                android:id="@+id/likeBtn"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@android:drawable/btn_star_big_off"
+                                app:tint="#FFC107"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:scaleType="fitCenter"
+                                android:layout_marginBottom="12dp"/>
+                            <ImageButton
+                                android:id="@+id/saveBtn"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:src="@drawable/ic_square"
+                                app:tint="#333333"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:scaleType="fitCenter"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <View android:layout_width="match_parent" android:layout_height="50dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:elevation="10dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_launcher_foreground"
+            android:backgroundTint="#333333"
+            app:iconTint="#333333"/>
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_launcher_foreground"
+            android:backgroundTint="#2E7D32"/>
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_launcher_foreground"
+            android:backgroundTint="#333333"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
