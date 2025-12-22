@@ -6,8 +6,14 @@
     android:id="@+id/calendarLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="#D9F2D0"
     android:padding="20dp">
+=======
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+>>>>>>> 00f90b0f76985402e2d0e948db458571c420a57f
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBar"

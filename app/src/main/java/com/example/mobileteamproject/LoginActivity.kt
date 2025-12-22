@@ -72,7 +72,11 @@ class LoginActivity : AppCompatActivity() {
                         ).show()
 
                         // TODO: 로그인 후 이동할 메인 화면 Activity로 변경
+<<<<<<< HEAD
                         val intent = Intent(this@LoginActivity, MapActivity::class.java)
+=======
+                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+>>>>>>> 00f90b0f76985402e2d0e948db458571c420a57f
                         startActivity(intent)
                         finish()
                     } else {

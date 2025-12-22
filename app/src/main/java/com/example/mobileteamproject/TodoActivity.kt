@@ -30,7 +30,12 @@ class TodoActivity : AppCompatActivity() {
         rootLayout = findViewById(R.id.toDoList)
         backBtn = findViewById(R.id.backBtn)
         saveBtn = findViewById(R.id.saveBtn)
+<<<<<<< HEAD
         addListBtn = findViewById(R.id.addListBtn)
+=======
+        midTitleBox = findViewById(R.id.midTitleBox)
+        addListBtn = findViewById(R.id.addList)
+>>>>>>> 00f90b0f76985402e2d0e948db458571c420a57f
         topBar = findViewById(R.id.topBar)
 
         // 뒤로가기
@@ -87,7 +92,11 @@ class TodoActivity : AppCompatActivity() {
     private fun clearTodoRows() {
         for (i in rootLayout.childCount - 1 downTo 0) {
             val child = rootLayout.getChildAt(i)
+<<<<<<< HEAD
             if (child.id != R.id.topBar && child.id != R.id.addListBtn) {
+=======
+            if (child.id != R.id.topBar && child.id != R.id.addList) {
+>>>>>>> 00f90b0f76985402e2d0e948db458571c420a57f
                 rootLayout.removeViewAt(i)
             }
         }
@@ -165,7 +174,11 @@ class TodoActivity : AppCompatActivity() {
                 for (i in 0 until rootLayout.childCount) {
                     val child = rootLayout.getChildAt(i)
 
+<<<<<<< HEAD
                     if (child.id == R.id.topBar || child.id == R.id.addListBtn) continue
+=======
+                    if (child.id == R.id.topBar || child.id == R.id.addList) continue
+>>>>>>> 00f90b0f76985402e2d0e948db458571c420a57f
                     if (child !is LinearLayout) continue
                     if (child.childCount < 2) continue
 

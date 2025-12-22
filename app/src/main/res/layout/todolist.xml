@@ -43,6 +43,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
+<<<<<<< HEAD
         <ImageButton
             android:id="@+id/saveBtn"
             android:layout_width="40dp"
@@ -54,6 +55,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
+=======
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔍"
+            android:textSize="26sp" />
+    </LinearLayout>
+>>>>>>> 00f90b0f76985402e2d0e948db458571c420a57f
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
