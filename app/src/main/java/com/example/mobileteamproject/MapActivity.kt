@@ -1,4 +1,4 @@
-package com.example.mobileteamproject   // ← 프로젝트 패키지에 맞게
+package com.example.mobileteamproject
 
 import android.Manifest
 import android.content.Intent
@@ -10,7 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.naver.maps.geometry.LatLng
-import com.naver.maps.map.*
+import com.naver.maps.map.CameraUpdate
+import com.naver.maps.map.LocationTrackingMode
+import com.naver.maps.map.MapFragment
+import com.naver.maps.map.NaverMap
+import com.naver.maps.map.NaverMapSdk
+import com.naver.maps.map.OnMapReadyCallback
 import com.naver.maps.map.util.FusedLocationSource
 
 class MapActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -23,18 +28,21 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // ⚠ 레이아웃 이름 확인: activity_map, map 중에 실제 있는 걸로 바꿔줘
+        // 레이아웃 이름 확인: R.layout.map 가 실제 파일이면 그대로 두면 됨
         setContentView(R.layout.map)
 
-        findViewById<Button>(R.id.backBtn).setOnClickListener {
-            finish()
-        }
+        findViewById<Button>(R.id.backBtn).setOnClickListener { finish() }
+
         findViewById<Button>(R.id.homeBtn).setOnClickListener {
-            // 현재가 홈 화면
+            // 현재 화면이 "지도 홈"이면 굳이 이동할 필요 없음
+            // (원하면 MainActivity로 보내기: startActivity(Intent(this, MainActivity::class.java)))
+            Toast.makeText(this, "현재 홈(지도) 화면입니다.", Toast.LENGTH_SHORT).show()
         }
+
         findViewById<Button>(R.id.searchBtn).setOnClickListener {
             startActivity(Intent(this, SearchActivity::class.java))
         }
+
         findViewById<Button>(R.id.myPageBtn).setOnClickListener {
             startActivity(Intent(this, MyPageActivity::class.java))
         }
@@ -65,7 +73,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         naverMap.locationSource = locationSource
         naverMap.uiSettings.isLocationButtonEnabled = true
 
-        // 권한이 있으면 바로 따라가기, 없으면 한 번만 요청
+        // 권한이 있으면 바로 따라가기, 없으면 요청
         if (hasPermission()) {
             naverMap.locationTrackingMode = LocationTrackingMode.Follow
         } else {
@@ -73,7 +81,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    // 위치 권한 체크
     private fun hasPermission(): Boolean {
         return ContextCompat.checkSelfPermission(
             this,
@@ -81,7 +88,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         ) == PackageManager.PERMISSION_GRANTED
     }
 
-    // 권한 요청
     private fun requestPermission() {
         ActivityCompat.requestPermissions(
             this,
@@ -93,7 +99,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         )
     }
 
-    // 권한 결과 처리
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -102,18 +107,14 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         if (requestCode == LOCATION_PERMISSION_REQUEST) {
-            if (grantResults.isNotEmpty() &&
+            val granted = grantResults.isNotEmpty() &&
                 grantResults[0] == PackageManager.PERMISSION_GRANTED
-            ) {
-                // 권한 허용됨 → 위치 따라가기 켜기
+
+            if (granted) {
                 naverMapObj?.locationTrackingMode = LocationTrackingMode.Follow
             } else {
-                // 권한 거부됨 → 위치 기능 사용 안 함 (토스트 띄우고 끝내도 됨)
                 Toast.makeText(this, "위치 권한이 필요합니다.", Toast.LENGTH_SHORT).show()
             }
         }
     }
-
-
 }
-

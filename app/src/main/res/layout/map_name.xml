@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- 상단 바 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
@@ -15,7 +16,7 @@
             android:layout_gravity="center"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="&lt;"
+            android:text="<"
             android:textColor="@color/black"
             android:textSize="32sp"
             android:backgroundTint="@color/white"
@@ -31,9 +32,9 @@
             android:background="@color/white"
             android:layout_gravity="center"
             android:layout_marginStart="16dp"/>
-
     </LinearLayout>
 
+    <!-- 본문 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -52,6 +53,7 @@
                 android:padding="10dp"
                 android:orientation="vertical">
 
+                <!-- 정렬 버튼 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -73,9 +75,8 @@
                         android:textColor="@color/black"
                         android:id="@+id/lookbtn"/>
                 </LinearLayout>
-                <!-- 수정필요 : 아래 보면 사진을 리니어레이아웃에 넣어줬으나,
-                이미지의 크기에 맞춰서 나온다는 생각과 달리 다르게 나옴
-                ==> 그냥 크기 주면 되는데 어느정도 크기가 적당할지 모르겠음..ㅎ-->
+
+                <!-- 이미지 영역 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -83,11 +84,12 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:background="@drawable/schoolimg">
+
                     <Button
                         android:layout_gravity="center"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:text="&lt;"
+                        android:text="<"
                         android:textColor="@color/black"
                         android:textSize="32sp"
                         android:backgroundTint="@color/white"
@@ -96,11 +98,12 @@
                         android:includeFontPadding="false"
                         android:id="@+id/leftbtn"
                         android:layout_marginEnd="100dp"/>
+
                     <Button
                         android:layout_gravity="center"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:text="&gt;"
+                        android:text=">"
                         android:textColor="@color/black"
                         android:textSize="32sp"
                         android:backgroundTint="@color/white"
@@ -110,12 +113,11 @@
                         android:id="@+id/rightbtn"
                         android:layout_marginStart="100dp"/>
                 </LinearLayout>
-
             </LinearLayout>
-
         </LinearLayout>
     </LinearLayout>
 
+    <!-- 하단 네비게이션 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
@@ -139,6 +141,7 @@
             android:id="@+id/postBtn"
             android:layout_weight="1"
             android:layout_marginHorizontal="24dp"/>
+
         <Button
             android:layout_width="0dp"
             android:layout_height="60dp"
@@ -148,6 +151,4 @@
             android:layout_weight="1"
             android:layout_marginHorizontal="24dp"/>
     </LinearLayout>
-
-
 </LinearLayout>

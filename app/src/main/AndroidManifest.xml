@@ -19,7 +19,6 @@
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="7irpb4rlyd"/>
 
-
         <activity android:name=".LoginActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,9 +37,5 @@
         <activity android:name=".MyUploadActivity" android:exported="false"/>
         <activity android:name=".CalendarActivity" android:exported="false"/>
         <activity android:name=".TodoActivity" android:exported="false"/>
-
-
-
-
     </application>
 </manifest>

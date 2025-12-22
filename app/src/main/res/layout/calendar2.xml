@@ -4,76 +4,79 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- 상단 바 -->
+    <!-- 상단 툴바 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:background="#D9F2D0"
-        android:orientation="horizontal">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp">
 
         <Button
             android:id="@+id/backBtn"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_gravity="center"
             android:backgroundTint="@color/white"
             android:gravity="center"
-            android:includeFontPadding="false"
-            android:padding="0dp"
             android:text="<"
             android:textColor="@color/black"
             android:textSize="32sp" />
 
         <TextView
+            android:id="@+id/topTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginStart="16dp"
-            android:background="@color/white"
-            android:text="지도"
-            android:textColor="@color/black" />
+            android:text="마이 페이지"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
     </LinearLayout>
 
-    <!-- 지도 Fragment -->
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/map_fragment"
+    <!-- 캘린더 뷰 -->
+    <CalendarView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:name="com.naver.maps.map.MapFragment" />
+        android:layout_margin="16dp" />
 
-    <!-- 하단 네비게이션 -->
+    <!-- 하단 네비게이션 바 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:background="#D9F2D0"
+        android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/homeBtn"
+        <ImageButton
+            android:id="@+id/btn1"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_gravity="center"
-            android:background="@drawable/icon_home_filled"
-            android:layout_marginHorizontal="24dp"/>
+            android:src="@drawable/circle_icon"
+            android:scaleType="fitCenter"
+            android:padding="12dp"
+            android:background="?attr/selectableItemBackground" />
 
-        <Button
-            android:id="@+id/searchBtn"
+        <ImageButton
+            android:id="@+id/btn2"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_gravity="center"
-            android:background="@drawable/ic_search_24"
-            android:layout_marginHorizontal="24dp"/>
+            android:src="@drawable/circle_icon"
+            android:scaleType="fitCenter"
+            android:padding="12dp"
+            android:background="?attr/selectableItemBackground" />
 
-        <Button
-            android:id="@+id/myPageBtn"
+        <ImageButton
+            android:id="@+id/btn3"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_gravity="center"
-            android:background="@drawable/icon_people"
-            android:layout_marginHorizontal="24dp"/>
+            android:src="@drawable/circle_icon"
+            android:scaleType="fitCenter"
+            android:padding="12dp"
+            android:background="?attr/selectableItemBackground" />
     </LinearLayout>
+
 </LinearLayout>

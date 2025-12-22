@@ -19,7 +19,6 @@ class TodoActivity : AppCompatActivity() {
     private lateinit var rootLayout: LinearLayout
     private lateinit var backBtn: Button
     private lateinit var saveBtn: Button
-    private lateinit var midTitleBox: EditText
     private lateinit var addListBtn: Button
     private lateinit var topBar: View
 
@@ -83,7 +82,7 @@ class TodoActivity : AppCompatActivity() {
         }
     }
 
-    // topBar / addList 빼고 나머지 동적 행 제거
+    // topBar / addListBtn 빼고 나머지 동적 행 제거
     private fun clearTodoRows() {
         for (i in rootLayout.childCount - 1 downTo 0) {
             val child = rootLayout.getChildAt(i)
@@ -135,7 +134,7 @@ class TodoActivity : AppCompatActivity() {
         if (todo != null) {
             editText.setText(todo.content ?: "")
             radioButton.isChecked = todo.done == true
-            rowLayout.tag = todo.id          // ★ 이 행이 어떤 todoId인지 저장
+            rowLayout.tag = todo.id // 이 행이 어떤 todoId인지 저장
             editText.alpha = if (radioButton.isChecked) 0.4f else 1.0f
         }
 
@@ -188,13 +187,13 @@ class TodoActivity : AppCompatActivity() {
                         )
                         val created = RetrofitInstance.api.createTodo(userId, dto)
                         withContext(Dispatchers.Main) {
-                            child.tag = created.id   // 다음부터는 update로
+                            child.tag = created.id // 다음부터는 update로
                         }
                     } else {
                         // 기존 todo 수정
                         val dto = TodoUpdateDto(
                             content = text,
-                                done = done
+                            done = done
                         )
                         RetrofitInstance.api.updateTodo(existingId, dto)
                     }
@@ -220,9 +219,6 @@ class TodoActivity : AppCompatActivity() {
         }
     }
 
-    // -----------------------------
-    // 로그인 시 저장해 둔 userId 가져오기
-    // -----------------------------
     private fun getCurrentUserId(): Long {
         val prefs = getSharedPreferences("user_prefs", MODE_PRIVATE)
         return prefs.getLong("userId", -1L)

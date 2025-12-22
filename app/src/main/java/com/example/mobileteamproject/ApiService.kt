@@ -39,14 +39,12 @@ interface ApiService {
         @Path("todoId") todoId: Long
     ): String
 
-
     // CALENDAR
     @GET("/calendar")
     suspend fun getCalendar(): List<String>
 
     @POST("/calendar")
     suspend fun saveCalendar(@Body req: Map<String, String>): String
-
 
     // SOCIAL ACTIONS
     @POST("/like")
@@ -58,9 +56,7 @@ interface ApiService {
     @POST("/vote")
     suspend fun doVote(@Body req: VoteDto): String
 
-
     // POST UPLOAD
-// 게시글 업로드
     @POST("/api/post")
     suspend fun createPost(
         @Body req: PostCreateDto
@@ -74,5 +70,4 @@ interface ApiService {
     suspend fun getPostsByUser(
         @Path("userId") userId: Long
     ): List<PostResponseDto>
-
 }

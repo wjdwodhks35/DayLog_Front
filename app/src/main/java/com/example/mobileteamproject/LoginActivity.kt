@@ -41,9 +41,8 @@ class LoginActivity : AppCompatActivity() {
             doLogin(email, password)
         }
 
-        // 회원가입 화면으로 이동 (이미 있는 SignupActivity로 바꿔줘)
+        // 회원가입 화면으로 이동
         btnGoSignup.setOnClickListener {
-            // TODO: 실제 네가 쓰는 회원가입 액티비티 이름으로 변경
             val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
@@ -57,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
 
                 withContext(Dispatchers.Main) {
                     if (user.id != null) {
-                        // 로그인 성공 → 유저 정보 저장(예: SharedPreferences)
+                        // 로그인 성공 → 유저 정보 저장
                         val prefs = getSharedPreferences("user_prefs", MODE_PRIVATE)
                         prefs.edit()
                             .putLong("userId", user.id)
@@ -71,8 +70,8 @@ class LoginActivity : AppCompatActivity() {
                             Toast.LENGTH_SHORT
                         ).show()
 
-                        // TODO: 로그인 후 이동할 메인 화면 Activity로 변경
-                        val intent = Intent(this@LoginActivity, MapActivity::class.java)
+                        // 로그인 후 이동할 메인 화면
+                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {

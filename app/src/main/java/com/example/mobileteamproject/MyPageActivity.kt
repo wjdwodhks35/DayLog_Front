@@ -11,12 +11,11 @@ class MyPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mypage)
 
-
         findViewById<Button>(R.id.backBtn).setOnClickListener {
             finish()
         }
         findViewById<Button>(R.id.homeBtn).setOnClickListener {
-            startActivity(Intent(this, MapActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
         findViewById<Button>(R.id.postBtn).setOnClickListener {
             startActivity(Intent(this, UploadActivity::class.java))

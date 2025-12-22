@@ -47,7 +47,6 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     <LinearLayout
         android:id="@+id/monthControlContainer"
         android:layout_width="match_parent"
